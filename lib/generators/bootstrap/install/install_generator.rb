@@ -37,6 +37,7 @@ module Bootstrap
           copy_file "bootstrap.js", "app/assets/javascripts/bootstrap.js"
         end
         copy_file "bootstrap_and_overrides.less", "app/assets/stylesheets/bootstrap_and_overrides.css.less"
+        copy_file "bootstrap_form.rb", "config/initializers/bootstrap_form.rb"
       end
 
       def cleanup_legacy

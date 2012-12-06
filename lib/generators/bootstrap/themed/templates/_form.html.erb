@@ -1,12 +1,9 @@
-<%%= form_for @<%= resource_name %>, :html => { :class => 'form-horizontal' } do |f| %>
+<%%= form_for @<%= resource_name %>, :html => { :class => 'form-horizontal well' } do |f| %>
+<% field_set_tag @<%= resource_name %>.model_name.human do %>
   <%- columns.each do |column| -%>
-  <div class="control-group">
-    <%%= f.label :<%= column.name %>, :class => 'control-label' %>
-    <div class="controls">
-      <%%= f.<%= column.field_type %> :<%= column.name %>, :class => '<%= column.field_type %>' %>
-    </div>
-  </div>
+      <%%= f.<%= column.field_type %> :<%= column.name %>, :class => '<%= column.field_type %> input-xlarge' %>
   <%- end -%>
+<% end %>
 
   <div class="form-actions">
     <%%= f.submit nil, :class => 'btn btn-primary' %>
